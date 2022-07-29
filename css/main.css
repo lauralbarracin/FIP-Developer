@@ -1,0 +1,875 @@
+/*
+Style Name: CSS GRID Review 
+Description: Class File
+Author: Laura Albarracin 
+Version: 1.0
+Tags: GRID, Build, Be Awesome
+*/
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar */
+}
+
+/* -------------
+  Fonts
+-------------- */
+
+
+/* ------------ */
+
+/* -------------
+  Plugins
+-------------*/
+
+/* -------------
+  Reset
+-------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #202020;
+    font-family: 'CoconPro', serif;
+    font-size: 17px;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0.0 em;
+    padding: 0.0 em;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ___________________________________________
+
+       CSS Guide
+___________________________________________ */
+
+/* 01. General Styles                        
+   02. CSS Grid                          
+/* _____________________________________
+
+   01. General Styles
+   _____________________________________ */
+
+   .hidden {
+       display: none;
+   }
+
+   .margin-left {
+       margin-left: 1em;
+   }
+
+   .margin-tb {
+       margin: 2em 0 5em;
+   }
+
+   .margin-top {
+       margin-top: 1em;
+   }
+
+   .border-top {
+       border-top: 2px solid #da9c30;
+       padding-top: 1.5em;
+       margin: 0 1em 1em;
+   }
+
+   .grey-border-top {
+        border-top: 1px solid #ccc;
+   }
+
+   .lg-font {
+       font-size: 1.25em;
+   }
+
+
+   /*------- Floats --------*/
+
+   .f-left {
+       float: left;
+   }
+
+   .f-right {
+    float: right;
+   }
+
+   /*------- End Floats --------*/
+   /*------- Font Awesome -------*/
+
+    .fas {
+        display: none;
+    }
+
+   /*------- End Font Awesome -------*/
+
+   /*------- Mobile Padding ---------*/
+
+   @media only screen and (max-width: 600px) {
+
+   }
+
+   .mobile-padding {
+       padding: 0 1em;
+   }
+
+   /*------- End Mobile Padding ---------*/
+
+   @supports (grid-area: auto) {
+    
+
+    /*------------ Start Mobile ------------*/
+
+    .site {
+        max-width: 799px;
+    }
+
+    /*------------ Mobile Grid Items ------------*/
+
+    .head, .main > *, .foot {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .one-item {
+        display: grid;
+        grid-column: 1 / span 2;
+        grid-template-columns: 1fr;
+    }
+
+    .two-items {
+        display: grid;
+        grid-column: 1 / span 2;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-evenly;
+        row-gap: 2em;
+        column-gap: 2em;
+    }
+
+    .three-items {
+        display: grid;
+        grid-column: 1 / span 2;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-evenly;
+        row-gap: 0em;
+        column-gap: 0em;
+    }
+
+    .contact-override {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: 1 / span 2;
+        background: #f4f4f4;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .custom-override {
+        display: grid;
+        grid-column: 1 / span 2;
+        grid-template-columns: 1fr;
+    }
+
+    /*------------  End Mobile Grid Items ------------*/
+
+    /*------------  Start Mobile Site header ------------*/
+
+    header {
+        position: sticky;
+        background-color: #fff;
+        top: 0px;
+        border-bottom: 1px solid #e6e6e6;
+        box-shadow: 0px 5px 3px rgb(246, 245, 245);
+    }
+
+    .logo {
+        grid-column: 1 / span 1;
+        width: 120px;
+    }
+
+    .logo img {
+        padding: 1em;
+        width: 75%;
+    }
+
+    /*------------  End Mobile Site header ------------*/
+
+    /*------------ a. start nav show/hide mobile ------------*/
+
+    .full {
+        display: none;
+    }
+
+
+    .mobile {
+        display: grid;
+        grid-column: 2 / span 1;
+    }
+
+    /*------------ a. end nav show/hide mobile ------------*/
+
+    /*------------ b. start mobile nav overlay/menu ------------*/
+
+         @keyframes bugfix {
+            from {
+              padding: 0;
+            }
+            to {
+              padding: 0;
+            }
+          }
+          @-webkit-keyframes bugfix {
+            from {
+              padding: 0;
+            }
+            to {
+              padding: 0;
+            }
+          }
+		  
+          #overlay-button {
+            position: absolute;
+            right: 1em;
+            padding: 26px 11px;
+            z-index: 5;
+            cursor: pointer;
+            user-select: none;
+          }
+
+          #overlay-button span {
+            height: 3px;
+            width: 25px;
+            border-radius: 2px;
+            background-color: #eb5c52;
+            position: relative;
+            display: block;
+            transition: all 0.2s ease-in-out;
+          }
+          #overlay-button span:before {
+            top: -7px;
+            visibility: visible;
+          }
+          #overlay-button span:after {
+            top: 7px;
+          }
+          #overlay-button span:before, #overlay-button span:after {
+            height: 3px;
+            width: 25px;
+            border-radius: 2px;
+            background-color: #eb5c52;
+            position: absolute;
+            content: "";
+            transition: all 0.3s ease-in-out;
+          }
+          #overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+            background: #3a3a3a;
+          }
+          
+
+          #overlay {
+            height: 100vh;
+            width: 100vw;
+            background: #eb5c52;
+            z-index: 2;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* This fixes scrolling issue */
+            overflow: hidden;
+          }
+          #overlay.active {
+            visibility: visible;
+          }
+          #overlay ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100vh;
+            padding-left: 0;
+            list-style-type: none;
+          }
+          #overlay ul li {
+            padding: .75em;
+          }
+          #overlay ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25em;
+          }
+          #overlay ul li a:hover {
+            color: #333332;
+          }
+
+    /*------------ End Mobile Nav ------------*/
+
+    /*------------ Start Mobile hero ------------*/
+
+    .hero {
+        margin: 0;
+    }
+
+    .hero-img img {
+        width: 100%;
+    }
+
+    .hero-img {
+        display: grid;
+        grid-column: span 2;
+        margin-bottom: 1em;
+    }
+
+    .hero-img > * {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .hero-img h2, .hero-img h3 {
+        background: #fff;
+        padding: 1em 1.75em;
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+    .hero-img h2 span, .hero-img h3 span, .faq h2 span {
+        font-size: .65em;
+        color: #eb5c52;
+    }
+
+    .hero-img h2.left, .hero-img h3.left {
+        align-self:flex-end;
+        justify-self:start;
+        margin-left: 1em;
+    }
+
+    .hero-img h2.right, .hero-img h3.right {
+        align-self: flex-end;
+        justify-self: end;
+        margin-right: 1em;
+    }
+
+    .contact-item {
+        padding: 1em .5em;
+    }
+
+    .contact-item p {
+        font-size: .65em;
+    }
+
+    /*------------ End Mobile hero ------------*/
+
+    /*------------ Start Mobile Main Navigation ------------*/
+
+    .nav {
+        grid-column: 1 / span 2;
+        padding-top: 1.5em;
+        margin: 0;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 1em 0 1em 1em;
+        text-decoration: none;
+        text-align: start;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 1.25em;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0em;
+    }
+
+    nav ul li a {
+        color: #626262;
+        font-size: .85em;
+    }
+
+    nav ul li a.active {
+        padding-bottom: .5em;
+        border-bottom: 3px solid #eb5c52;
+    }   
+
+
+    /*------------ End Mobile Why Nav ------------*/
+
+    /*------------ Start Mobile Why Us ------------*/
+
+    .why-us {
+        display: grid;
+        grid-column: span 1;
+        width: 100%;
+        padding-top: 10px;
+        margin-left: 30px;
+    }
+    
+    
+    .why-us-img {
+        display: grid;
+        grid-column: span 1;
+    }
+
+    .why-us-img img {
+        width: 100%;
+        padding-top: 0px;
+        margin-left: 0px;
+    }
+
+    .why-us-img > * {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+
+    /*------------ End Mobile Why Us ------------*/
+
+
+    /*------------ Start Mobile Footer ------------*/
+
+    footer {
+        background-color: #f7972f;
+    }
+
+    footer h3 {
+        font-weight: 100;
+        display: grid;
+        grid-column: 2/ span 2;
+        color: #fff;
+    }
+
+    footer p {
+        font-weight: 50;
+        display: grid;
+        grid-column: 2/ span 2;
+        color: #fff;
+    }
+
+    footer img {
+        display: grid;
+        grid-column: 2/ span 2;
+    }
+
+    .footer-spacing {
+        padding: 6em 0em 4em 0em;
+    }
+
+
+    /*------------ End Mobile Footer ------------*/
+
+   /* _____________________________________
+
+   02. CSS Grid
+   _____________________________________ */
+   @media screen and (min-width: 700px) and (max-width: 1023px) {
+    /*-- Tablet Fixes --*/
+   }
+
+
+
+   @media screen and (min-width: 1024px) {
+
+            .site {
+                max-width: none;
+            }
+
+            .border-top {
+                margin: 0;
+            }
+
+            .border-top-or {
+                margin: 0;
+            }
+
+            .mobile-padding {
+                padding: 0;
+            }
+
+            input, textarea {
+                width: 448px;
+                padding: 1.5em;
+            }
+        
+
+            /*------- Font Awesome -------*/
+
+            .fas {
+                display: block;
+                margin-right: .5em;
+                font-size: 4em;
+                color: #cf5249;
+            }
+        
+        /*------- End Font Awesome -------*/
+
+            /*------------ Grid Items ------------*/
+
+            .head, .main > *, .foot {
+                display: grid;
+                grid-template-columns: 1fr repeat(2, minmax(auto, 30em)) 1fr;
+            }
+
+            .one-item {
+                display: grid;
+                grid-column: 1 / span 4;
+                grid-template-columns: 1fr;
+            }
+
+            .two-items {
+                display: grid;
+                grid-column: 2 / span 2;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: space-evenly;
+                margin-left: 5em;
+                margin-top: 3em;
+                margin-right: 2em;
+                margin-bottom: 3em;
+                row-gap: 0.2em;
+                column-gap: 0.2em;
+
+            }
+
+            .three-items {
+                display: grid;
+                grid-column: 1 / span 4;
+                grid-template-columns: repeat(3, 1fr);
+                justify-content: space-evenly;
+                row-gap: 0em;
+                column-gap: 0em;
+                margin-left: 5em;
+                margin-right: 2em;
+                background-color: #0d0d0d;
+            }
+
+            .four-items {
+                display: grid;
+                grid-column: 1 / span 5;
+                grid-template-columns: repeat(4, 1fr);
+                justify-content: space-evenly;
+                row-gap: 1em;
+                column-gap: 1em;
+                background-color: #e5e5e5;
+                margin-top: 2em;
+                margin-right: 0em;
+                padding-top: 2em;
+                padding-left: 2em;
+                padding-bottom: 3em;
+            }
+
+            .contact-override {
+                display: grid;
+                grid-template-columns: 1fr repeat(2, minmax(auto, 30em)) 1fr;
+                grid-column: 1 / span 4;
+                background: #f4f4f4;
+                border-bottom: 1px solid #ccc;
+            }
+
+
+            .one-item h2{
+                display: grid;
+                grid-column: 2 / span 2;
+                display: block;
+                padding-top: 1em;
+                font-size: 2em;
+            }
+
+
+            .one-item h3{
+                display: grid;
+                padding-top: 0.1em;
+                grid-column: 2 / span 2;
+                grid-template-columns: 1fr;
+                text-align: center;
+                font-size: 1.3em;
+            }
+
+            .mobile2-em {
+                margin-top: 2em;
+            }
+
+            /*------------  End Grid Items ------------*/
+
+            /*------------ Start Site Header ------------*/
+
+            .logo img {
+                padding: 1.5em 1em 1em;
+                width: 60%;
+            }
+
+            /*------------ End Site Header ------------*/
+
+            /*------------ Start Nav Styling ------------*/
+            
+            .full {
+                display: grid;
+            }
+    
+        
+            .mobile {
+                display: none;
+            }
+
+            .nav {
+                grid-column: 2 / span 2;
+                padding-top: 3.5em;
+                margin: 0;
+            }
+
+            nav ul {
+                margin: 0;
+                padding: 0em 0em .95em;
+                text-decoration: none;
+                text-align: end;
+            }
+
+            nav ul li {
+                display: inline;
+                margin-right: 4em;
+            }
+
+            nav ul li:last-child {
+                margin-right: 0em;
+            }
+
+            nav ul li a {
+                color: #706f6f;
+                font-size: inherit;
+            }
+
+            nav ul li a:hover  {
+                padding-bottom: .5em;
+                border-bottom: 3px solid hsl(120, 96%, 64%);
+            }
+
+            nav ul li a.active {
+                padding-bottom: .5em;
+                border-bottom: 3px solid #5dff3d;
+            }
+
+            nav ul li a h4 {
+                display: inline;
+                padding: 1.5em 1.5em 1.5em 1.5em;
+                background-color: #75fa41;
+                color: #fff;
+                font-size: 1em;
+                transition: background-color 500ms linear;
+            }
+
+            nav ul li a:hover h4 {
+                background-color: #626262;
+                transition: background-color 500ms linear;
+            }
+
+            /*------------ End Nav Styling ------------*/
+
+            /*------------ Start Hero ------------*/
+
+            .subtitle h3{
+                background-color: #ffffff;
+                font-size: 3em;
+                margin-top: 1em;
+                display: block;
+                text-align: center;
+            }
+
+            .products h2 {
+                margin-left: 6em;
+                font-size: 1.4em;
+                padding-top: 1em;
+                text-align: center;
+                display: block;
+            }
+
+            .hero-img {
+                width: 100%;
+                grid-column: span 4;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            .hero-img h2, .hero-img h3 {
+                font-size: 2em;
+                padding-bottom: 0.2em;
+                color: #3a3a3a;
+            }
+
+            .hero-img h2.left, .hero-img h3.left {
+                margin-left: 2em;
+                padding-top: 2em;
+            }
+
+            .hero-img h2.right, .hero-img h3.right {
+                margin-right: 6em;
+            }
+
+            .hero-img map{
+                width: 80%;
+                display: grid;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            .map1{
+                margin-right: 2em;
+            }
+
+            .img-back {
+                background-image: url("../img/banner2.png");
+                width: 1440px;
+                height: 703px;
+                text-align: center;
+            }
+
+            .img-back a{
+                text-align: center;
+            }
+
+
+            .logos {
+                margin-top: 3em;
+                margin-left: 1em;
+                margin-right: 4em;
+            }
+
+            .button {
+                margin-top: 300px;
+                background-color: #f8cf89;
+                padding: 8px 16px;
+                color: rgb(24, 23, 23);
+                font-size: 1.4rem;
+                border-top-right-radius: 40px;
+                border-top-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                border-bottom-left-radius: 40px;
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+
+            .button1 {
+                margin-top: 10px;
+                background-color: #51ff62;
+                padding: 10px 20px;
+                color: rgb(24, 23, 23);
+                font-size: 1.4rem;
+                border-top-right-radius: 40px;
+                border-top-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                border-bottom-left-radius: 40px;
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+
+            .contact-item {
+                padding: 2em;
+            }
+
+            .contact-item p {
+                font-size: 1em;
+            }
+
+            /*------------ End Hero ------------*/
+
+            /*------------ Start map ------------*/
+
+            .map {
+                margin-bottom: 3em;
+                display: grid;
+                grid-column: span 4;
+            }
+
+
+            .mobile-hide {
+                display: block;
+            }
+
+            /*------------End Why ------------*/
+
+
+            /*------------ Start Footer ------------*/
+
+            footer {
+                    background-color: #FFB01B;
+                }
+            
+            footer p {
+                    font-weight: 40;
+                    color: #fff;
+                }
+            
+            footer br {
+                color: #f7f4f4;
+                font-weight: 90;
+                display: inline-block;
+                grid-column: 1/ span 1;
+                color: #fff;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+            footer h3 {
+                
+                font-weight: 60;
+                display: inline-block;
+                grid-column: 1/ span 1;
+                color: #fff;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            
+            .footer-spacing {
+                    padding: 3em 0em 3em 0em;
+                }
+
+            .foot-contact-image {
+                color: #ccc;
+                grid-column: 1/ span 1;
+                font-size: 4em;
+                margin-left: 1em;
+                margin-bottom: 2em;
+
+            }
+        }
+    }
