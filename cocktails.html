@@ -2,53 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/gcr4qve.css">
+    <link href="http://fonts.cdnfonts.com/css/tw-cen-mt-condensed" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <script src="https://kit.fontawesome.com/4f6e35c80b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <title>Cocktails</title>
+    <title>Quatro</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="site">
-    <h1 class="hidden"> Quatro Cocktails</h1>
+
+<body>
+    <h1 class="hidden">Quatro</h1>
     <a class="hidden" href="#content">Skip to content</a>
     <header class="head">
         <div class="logo">
-            <img src="img/color-logo.png" alt="QuatroLogo">
+            <img src="img/color-logo.png" alt="Quatro Logo">
         </div>
-        <!-- mobile menu-->
         <div class="mobile">
-         <input type="checkbox" id="overlay-input"/>
-         <label for="overlay-input" id="overlay-button"><span></span></label>
+            <input type="checkbox" id="overlay-input"/>
+            <label for="overlay-input" id="overlay-button"><span></span></label>
             <div id="overlay">
-            <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">Products</a></li>
-                <li><a href="index.html">Recipes</a></li>
-                <li><a href="index.html">Buy</a></li>
-            </ul>
-        </div>
-        </div>
-        <!--end mobile menu-->
-        <!-- desktop menu-->
-        <nav class="nav full" aria-label="Main Navigation">   
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="cocktails.html">Recipes</a></li>
+                    <li><a href="buy.html">Buy</a></li>
+                </ul>
+            </div>
+        </div>        
+        <nav class="nav full  navMenu" aria-label="Main Navigation">
             <h2 class="hidden">Main Navigation</h2>
-            <ul>
+            <ul id="menu-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">Products</a></li>
-                <li><a href="index.html">Recipes</a></li>
-                <li><a href="index.html">Buy</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="cocktails.html">Recipes</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                
             </ul>
         </nav>
+
     </header>
     <main class="main" id="content">
         <div class="hero">
             <div class="hero-img">
                 <picture>
-                    <img src="img/hero-img2.jpg" alt="hero-img">
-                    <source media="(min-width:800px)" srcset="img/2200x840.png">
-                    <source media="(min-width:465px)" srcset="img/480x480.png">
+                    <source media="(min-width:700px)" srcset="./img/hero-img-1.png">
+                    <source media="(min-width:465px)" srcset="./img/hero1.png">
+                    <img src="./img/hero-img480.png" alt="hero-img">
                 </picture>
             </div>
         </div>
@@ -56,51 +55,69 @@
             <div class="box-model"><h3>Max your feelings</h3></div>
         </section>
             <section>
-                 <div class="two-items">
-                    <div class="box-model">
-                        <h3>cocktail 1</h3>
-                        <img src="img/cocktail1.png">
+                 <div class="why-us two-items">
+                    <div class="box-model profile-pic">
+                        <img src="img/cocktail1.png" alt="Old Fashioned">
+                        <div class="detail-text">
+                            <h2>Old fashioned</h2>
+                            <h2>Ingredients: 1 1/2 oz Bourbon or Rye whiskey, 1/4 Quatro Lemon, 2 dashes Angostura bitters</h2>
+                        </div>
                     </div>    
-                    <div class="box-model">
-                        <h3>cocktail 2</h3>
-                        <img src="img/cocktail2.png">
+                    <div class="box-model profile-pic">
+                        <img src="img/cocktail2.png" alt="Negroni">
+                        <div class="detail-text">
+                            <h2>Negroni</h2>
+                            <h2>Ingredients: Ingredients: 1 oz Campari, 1 oz Quatro Lemon, 1 oz Sweet red Vermouth</h2>
+                        </div>
                     </div>
-                    <div class="box-model">
-                        <h3>cocktail 3</h3>
-                        <img src="img/cocktail3.png">
+                    <div class="box-model profile-pic">
+                        <img src="img/cocktail3.png" alt="Mojito">
+                        <div class="detail-text">
+                            <h2>Mojito</h2>
+                            <h2>Ingredients: 1 1/2 oz White rum, 1 oz Quatro lime juice, 6 leaves of Mint</h2>
+                        </div>
                     </div>
-                    <div class="box-model">
-                        <h3>cocktail 4</h3>
-                        <img src="img/cocktail4.png">
+                    <div class="box-model profile-pic">
+                        <img src="img/cocktail4.png" alt="Lulada">
+                        <div class="detail-text">
+                            <div class="detail-text">
+                                <h2>Lulada</h2>
+                                <h2>Ingredients:6 lulos peeled, diced. 3 tablespoons of Quatro Orange, 3 cups of crushed ice.</h2>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="box-model">
-                        <h3>cocktail 5</h3>
-                        <img src="img/cocktail5.png">
+                    <div class="box-model profile-pic">
+                        <img src="img/cocktail5.png" alt="Moscow Mule">
+                        <div class="detail-text">
+                            <h2>Moscow Mule</h2>
+                            <h2>Ingredients: 1 1/2 oz Vodka, 1/6 oz Quatro Lime, 4 oz Ginger beer</h2>
+                        </div>
+                        
                     </div>
-                    <div class="box-model">
-                        <h3>cocktail 6</h3>
-                        <img src="img/cocktails6.png">
+                    <div class="box-model profile-pic">
+                        <img src="img/cocktails6.png" alt="Mimosa">
+                        <div class="detail-text">
+                            <h2>Mimosa</h2>
+                            <h2>Ingredients: 2 1/2 oz (1 part) Champagne, 2 1/2 oz (1 part) Quatro Orange</h2>
+                        </div>
                     </div>
                 </div>
             </section>
     </main>
-    <footer>
-        <div class="foot footer-spacing margin-top two-items">  
-            <h2 class="hidden">Site Footer</h2>
-            <div>
-                <h2 class="hidden">Contact Information</h2>
-            </div>
-            <div class="foot-contact-image">
-                <img src="img/logo-wb_1.png">
-            </div>
-            <div class="footer foot-contact">
-                <h3>Contact</h3>
-                <p>E-mail: friends@quatro.com</p>
-                <p> Toll Free:+1 226 270-1219<br>
-                <p> Quatro, 139 Sudbury St</p>
-                <p> Hamilton, On, N6B 2M0.</p>    
-            </div>   
-        </div> 
-    </footer>
+        <footer class="mobile2-em">
+            <div class="foot footer-spacing two-items footer">
+                <!-- <div class="foot-contact-image footer">
+                </div> -->
+                <div class="footer foot-contact">
+                    <img src="img/logo-wb_1.png" alt="Quatro Logo White">
+                    <p>Contact</p>
+                    <p>E-mail: friends@quatro.com</p>
+                    <p> Toll Free:+1 226 270-1219<br>
+                    <p> Quatro, 139 Sudbury St</p>
+                    <p> Hamilton, On, N6B 2M0.</p>    
+                </div>   
+            </div> 
+        </footer>
 </body>
 </html>
